@@ -1,0 +1,49 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Open Todo App (Chrome)",
+      "type": "chrome",
+      "request": "launch",
+      "file": "${workspaceFolder}/index.html",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Open Todo App (Edge)",
+      "type": "msedge",
+      "request": "launch",
+      "file": "${workspaceFolder}/index.html",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Debug Todo App (Chrome + server)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:8080/index.html",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "Start static server"
+    },
+    {
+      "name": "Debug Todo App (Edge + server)",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:8080/index.html",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "Start static server"
+    },
+    {
+      "name": "Attach to Chrome",
+      "type": "chrome",
+      "request": "attach",
+      "port": 9222,
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Attach to Edge",
+      "type": "msedge",
+      "request": "attach",
+      "port": 9222,
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}
