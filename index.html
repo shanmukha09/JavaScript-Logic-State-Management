@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1 class="app__title">To-Do List</h1>
+        <p class="app__subtitle">Tasks persist across reloads</p>
+      </header>
+
+      <form id="task-form" class="task-form" autocomplete="off">
+        <input
+          id="task-input"
+          class="task-form__input"
+          type="text"
+          placeholder="What needs to be done?"
+          aria-label="New task"
+          maxlength="200"
+        />
+        <button type="submit" class="task-form__submit">Add</button>
+      </form>
+
+      <section class="toolbar" aria-label="Task filters and actions">
+        <div class="filters" role="tablist" aria-label="Filter tasks">
+          <button
+            type="button"
+            class="filters__btn filters__btn--active"
+            data-filter="all"
+            role="tab"
+            aria-selected="true"
+          >
+            All
+          </button>
+          <button
+            type="button"
+            class="filters__btn"
+            data-filter="active"
+            role="tab"
+            aria-selected="false"
+          >
+            Active
+          </button>
+          <button
+            type="button"
+            class="filters__btn"
+            data-filter="completed"
+            role="tab"
+            aria-selected="false"
+          >
+            Completed
+          </button>
+        </div>
+        <button type="button" id="clear-completed" class="toolbar__clear" hidden>
+          Clear completed
+        </button>
+      </section>
+
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+
+      <footer class="app__footer">
+        <span id="task-count" class="task-count">0 items left</span>
+      </footer>
+    </main>
+
+    <template id="task-item-template">
+      <li class="task-item" data-id="">
+        <label class="task-item__check">
+          <input type="checkbox" class="task-item__checkbox" />
+          <span class="task-item__box" aria-hidden="true"></span>
+        </label>
+        <span class="task-item__text" tabindex="0"></span>
+        <input
+          type="text"
+          class="task-item__edit"
+          aria-label="Edit task"
+          hidden
+        />
+        <div class="task-item__actions">
+          <button type="button" class="task-item__btn task-item__btn--edit" title="Edit">
+            Edit
+          </button>
+          <button type="button" class="task-item__btn task-item__btn--delete" title="Delete">
+            Delete
+          </button>
+        </div>
+      </li>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
